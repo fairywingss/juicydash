@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juicy Dash</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Splash Screen -->
+    <div id="splashScreen">
+        <img src="assets/images/büyükfirmalogo.png" alt="Firma Logosu" id="splashLogo">
+        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+    
+    <div id="menu" class="menu">
+        <video id="menuVideo" autoplay loop muted playsinline>
+            <source src="assets/images/gamemenubg.webm" type="video/webm">
+        </video>
+        <div id="nameDisplay" class="name-display">
+            <span id="playerName" contenteditable="false">Your Name</span>
+        </div>
+        <div id="coinDisplay" class="coin-display">
+            <img src="assets/images/coin.png" alt="Coin">
+            <span>Coin: 0</span>
+        </div>
+        <div class="menu-buttons">
+            <button id="startBtn" class="start-btn"></button>
+            <div class="sub-buttons">
+                <button id="scoreboardBtn" class="sub-btn"></button>
+                <button id="themeBtn" class="sub-btn"></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modeSelection" class="mode-selection" style="display: none;">
+        <div class="mode-buttons">
+            <button id="normalModeBtn" class="mode-btn"></button>
+            <button id="fastModeBtn" class="mode-btn"></button>
+            <button id="endlessModeBtn" class="mode-btn"></button>
+            <button id="kidsModeBtn" class="mode-btn"></button>
+            <button id="backToMenuBtn" class="close-btn"></button>
+        </div>
+    </div>
+
+    <div id="themeRoulette" class="theme-roulette" style="display: none;">
+        <img src="assets/images/theme_roulette_logo.png" alt="Theme Roulette" class="roulette-logo">
+        <div class="theme-grid">
+            <div class="grid-background"></div>
+            <div class="theme-item" data-theme="1"><img src="assets/themes/theme1/preview.png" alt="Tema 1"></div>
+            <div class="theme-item" data-theme="2"><img src="assets/themes/theme2/preview.png" alt="Tema 2"></div>
+            <div class="theme-item" data-theme="3"><img src="assets/themes/theme3/preview.png" alt="Tema 3"></div>
+            <div class="theme-item" data-theme="4"><img src="assets/themes/theme4/preview.png" alt="Tema 4"></div>
+            <div class="theme-item" data-theme="5"><img src="assets/themes/theme5/preview.png" alt="Tema 5"></div>
+            <div class="theme-item" data-theme="6"><img src="assets/themes/theme6/preview.png" alt="Tema 6"></div>
+            <div class="theme-item" data-theme="7"><img src="assets/themes/theme7/preview.png" alt="Tema 7"></div>
+            <div class="theme-item" data-theme="8"><img src="assets/themes/theme8/preview.png" alt="Tema 8"></div>
+            <div class="theme-item" data-theme="9"><img src="assets/themes/theme9/preview.png" alt="Tema 9"></div>
+        </div>
+        <div class="roulette-controls">
+            <div class="cost-display">
+                <img src="assets/images/coin.png" alt="Coin" class="cost-coin">
+                <span id="currentCoins"></span>
+            </div>
+            <button id="openBtn" class="open-btn">
+                <span id="costAmount"></span>
+            </button>
+            <button id="backBtn" class="back-btn"></button>
+        </div>
+        <div id="alertPopup" class="alert-popup" style="display: none;">
+            <img src="assets/images/alertbg.png" alt="Alert">
+            <span>Yetersiz Coin!</span>
+        </div>
+    </div>
+
+    <div id="leaderboardScreen" class="leaderboard-screen" style="display: none;">
+        <div class="leaderboard-header">
+            <img src="assets/images/highscore.png" alt="Highscore" class="leaderboard-title">
+        </div>
+        <div class="mode-tabs">
+            <button class="tab active" data-mode="normal">Normal</button>
+            <button class="tab" data-mode="fast">Fast</button>
+            <button class="tab" data-mode="endless">Endless</button>
+            <button class="tab" data-mode="kids">Kids</button>
+        </div>
+        <div class="leaderboard-content">
+            <div class="leaderboard-list" id="leaderboardList"></div>
+        </div>
+        <button id="closeLeaderboardBtn" class="close-btn"></button>
+    </div>
+
+    <div id="game" class="game-container" style="display: none;">
+        <canvas id="gameCanvas"></canvas>
+        <div id="score">Skor: 0</div>
+        <div id="controls" class="controls">
+            <button id="homeBtn"></button>
+            <button id="soundBtn"></button>
+        </div>
+        <div id="homeMenu" class="home-menu" style="display: none;">
+            <button id="homeResumeBtn"></button>
+            <button id="homeReturnBtn"></button>
+            <button id="homeRestartBtn"></button>
+        </div>
+        <div id="countdown" style="display: none;"></div>
+        <div id="confirmDialog" class="confirm-dialog" style="display: none;">
+            <button id="confirmYesBtn"></button>
+            <button id="confirmNoBtn"></button>
+        </div>
+        <div id="retry" class="retry" style="display: none;">
+            <img src="assets/images/die.png" alt="Oyun Bitti" id="dieImage">
+            <div class="retry-buttons">
+                <button id="retryHomeBtn"></button>
+                <button id="retryBtn"></button>
+                <button id="retrySoundBtn"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93970d6c0eda673f',t:'MTc0NjE4NDAxOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
