@@ -1,0 +1,20 @@
+rero çizgi film
+(Holografik Yüzey)
+│   │   ├── (aynı dosyalar)
+│   ├── theme3/ (Antik Çivi Yazılı)
+│   │   ├── (aynı dosyalar)
+│   ├── theme4/ (Buharlı Punk)
+│   │   ├── (aynı dosyalar)
+│   ├── theme5/ (Sihirli Kitap)
+│   │   ├── (aynı dosyalar)
+│   ├── theme6/ (Volkanik Lav)
+│   │   ├── (aynı dosyalar)
+│   ├── theme7/ (Su Damlalı)
+│   │   ├── (aynı dosyalar)
+│   ├── theme8/ (Gece Şehir)
+│   │   ├── (aynı dosyalar)
+│   ├── theme9/ (Pizza Dilimli)
+
+
+
+bu tasarımların hepsini volkanik lav nesneler olarak yeniden tasarla
